@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="stylesheet" href="/css/bootstrap.min.css?ver=1">
+    <link rel="stylesheet" href="/css/swiper.min.css?ver=1">
+    <link rel="stylesheet" href="/css/font.css?ver=1">
+    <link rel="stylesheet" href="/css/common.css?ver=1">
+    <title>기업시민연구소</title>
+
+</head>
+<style>
+    section {
+        padding-bottom: 0;
+    }
+
+    .log {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .log a {
+        text-align: right;
+        display: block;
+        width: fit-content;
+        border: none;
+        background: inherit;
+        font-weight: 600;
+        color: #e63535;
+        cursor: pointer;
+        margin-left: auto;
+    }
+    h1{
+        padding: 50px 0 20px 0;
+    }
+    .contents {
+        background-color: #fff;
+        border: 3px solid #2b2b2b;
+        box-sizing: border-box;
+        padding: 17px;
+        width: 100%;
+        max-width: 780px;
+        margin:0 auto;
+    }
+
+    .contents table {
+        border: 3px solid #2b2b2b;
+        width: 100%;
+    }
+
+    .contents table tr th, .contents table tr td {
+        text-align: center;
+        padding: 10px 0;
+        font-size: 21px;
+        vertical-align: middle;
+    }
+
+    .contents table tr td {
+        border-bottom: 1px solid #e1e1e1;
+        font-size: 17px;
+    }
+
+    .contents table tr th {
+        background-color: #edf4f7;
+        border-bottom: 3px solid #2b2b2b;
+    }
+
+    .contents table tr td input{
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .contents .page-wrap {
+        margin: 30px auto;
+        width: fit-content;
+        background-color: #f9f9f9;
+        padding: 3px;
+    }
+
+    .contents .page-wrap ul li {
+        position: relative;
+        font-size: 14px;
+        padding: 0 8px;
+        cursor: pointer;
+    }
+
+    .contents .page-wrap ul li::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        right: 0;
+        width: 1px;
+        height: 14px;
+        background-color: #202634;
+    }
+
+    .contents .page-wrap ul li:last-child::after {
+        content: "";
+        display: none;
+    }
+
+     .excel {
+        display: block;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        width: 240px;
+        height: 70px;
+        margin: 30px auto;
+        margin-bottom: 60px;
+    }
+
+    @media (max-width: 530px) {
+        section {
+            overflow: hidden;
+        }
+
+        .contents {
+            width: 100%;
+            padding: 40px 10px;
+        }
+
+        div.table-wrap {
+            overflow-x: auto;
+            width: 100%;
+        }
+
+        div.table-wrap table {
+            width: 480px;
+        }
+    }
+</style>
+<body>
+<div action="/logout" method="post" class="log">
+    <a href="/logout">로그아웃</a>
+</div>
+<div class="wrap">
+    <section>
+        <form action="/delete" method="post">
+            <h1 class="text-center logo">
+                <img src="/images/logo.png" alt="기업시민연구소">
+            </h1>
+            <div class="contents">
+                <div class="table-wrap">
+                    <table id="results">
+                        <colgroup>
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="50%">
+                        </colgroup>
+                        <tr>
+                            <th>번호</th>
+                            <th>이름</th>
+                            <th>연락처</th>
+
+                        </tr>
+                     
+
+                        <% for(let i = 0; i < rst.length; i++){
+                        %>
+                            <tr>
+                                <td>
+                                    <%= rst[i].rnum %>
+                                </td>
+                                <td>
+                                    <%= rst[i].name %>
+                                </td>
+                                <td>
+                                    <%= rst[i].phone %>
+                                </td>
+
+                            </tr>
+                        <%
+                        } %>
+                    </table>
+                </div>
+                
+                <div class="page-wrap d-flex justify-content-center align-items-center">
+                    <% if(prev == true){
+                    %>
+                        <a href = "/admin?page=<%= Number(start) - 10 %>" style="cursor: pointer">&lt;</a>
+                    <%
+                    } %>
+                    <ul class="d-flex justify-content-center align-items-center" id="list">
+                        <% for(let i = start; i <= end; i++) {
+                        %>
+                        <li>
+                            <a href="/admin?page=<%= i %>">
+                                &nbsp;<%= i %>&nbsp;
+                            </a>
+                        </li>
+                        <%
+                        } %>
+                    </ul>
+                    <% if(next == true){
+                    %>
+                            <a href = "/admin?page=<%= Number(end) + 1 %>" style="cursor: pointer">&gt;</a>
+                    <%
+                    } %>
+                </div>
+                
+                
+               
+            </div>
+            <div class="d-flex justify-content-center wrap-box align-items-center">
+                <a href="/excelDown" class="excel"><img src="/images/excel.png" alt="excel"></a>
+
+            </div>
+            <input type="hidden" name="delete" value="">
+        </form>
+        <footer>
+            <p>
+              서울 강남구 봉은사로 514 포스코타워 삼성(06163)<br>
+             <span>
+               Email   ccri-postech@postech.ac.kr  |  Tel  02-6951-6244~5
+              </span> 
+            </p>              
+        </footer>
+    </section>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+</body>
+</html>

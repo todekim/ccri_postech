@@ -1,0 +1,24 @@
+{
+  "name": "postech",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "excel4node": "^1.7.2",
+    "express": "~4.16.1",
+    "express-session": "^1.17.2",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.3",
+    "nodemailer-dkim": "^1.0.5",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0"
+  }
+}

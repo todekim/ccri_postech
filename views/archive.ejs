@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="stylesheet" href="/css/bootstrap.min.css?ver=1">
+    <link rel="stylesheet" href="/css/swiper.min.css?ver=1">
+    <link rel="stylesheet" href="/css/font.css?ver=1">
+    <link rel="stylesheet" href="/css/common.css?ver=1">
+    <title>서울미디어랩 구독하기</title>
+    <style>
+        .wrap {
+            max-width: 640px;
+        }
+
+        .content-top {
+            overflow: hidden;
+        }
+
+        .content-top h1 {
+            padding-bottom: 29px;
+        }
+
+        .content-top p span {
+            display: inline-block;
+            margin-top: 4px;
+            margin-bottom: 17px;
+            color: #fff;
+            background-color: #000;
+            padding: 0 1px;
+            font-size: 15px;
+        }
+
+        .contents .content-middle {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .content-middle {
+            max-width: 520px;
+            margin: 0 auto !important;
+        }
+
+        .content-middle p {
+            margin-top: 10px;
+            font-weight: 300;
+            font-size: 12px;
+            color: #454545;
+        }
+
+        .gall {
+            margin-top: 40px;
+        }
+
+        .gall li {
+            border: 1px solid #009d5a;
+            width: 100%;
+            max-width: 160px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        .gall li:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        .gall li a {
+            display: block;
+            padding: 30px 0;
+            transition: .3s;
+        }
+
+        .gall li a:hover {
+            background-color: #009d5a;
+        }
+
+        .gall li a:hover h5 {
+            color: #fff;
+        }
+
+        .gall li a:hover p {
+            color: #000 !important;
+            background-color: #fff;
+        }
+
+        .gall li h5 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .gall li p {
+            color: #fff !important;
+            background-color: #000;
+            max-width: 61px;
+            margin: 0 auto;
+            margin-top: 5px;
+            font-size: 12px !important;
+            font-weight: 500 !important;
+        }
+
+        .gall li h5, .gall li p {
+            text-align: center !important;
+        }
+
+        .contents .page-wrap {
+            padding: 40px 0;
+            padding-top: 20px;
+        }
+
+        .contents .page-wrap ul li {
+            position: relative;
+            font-size: 14px;
+            padding: 0 5px;
+            cursor: pointer;
+        }
+
+        .contents .page-wrap ul li::after {
+            content: "";
+            position: absolute;
+            top: 4px;
+            right: 0;
+            width: 1px;
+            height: 14px;
+            background-color: #202634;
+        }
+
+        .contents .page-wrap ul li:last-child::after {
+            content: "";
+            display: none;
+        }
+        .contents .logo-wrap{
+            margin-top:0
+        }
+        @media (max-width: 560px) {
+            .gall {
+                width: 100%;
+                max-width: 340px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .gall li:nth-child(2n) {
+                margin-right: 0;
+            }
+
+            .gall li:nth-child(3n) {
+                margin-right: 20px;
+            }
+            .content-top p span{
+                font-size: 15px;
+                display: inline-block;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .gall {
+                width: 100%;
+                max-width: 280px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .gall li {
+                max-width: 130px;
+            }
+
+            .gall li:nth-child(2n) {
+                margin-right: 0;
+            }
+
+            .gall li:nth-child(3n) {
+                margin-right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="wrap">
+    <section>
+        <div class="top"><img src="/images/top.png" alt="뉴스레터 구독하기" class="img-fluid"></div>
+        <div class="contents">
+            <div class="content-top d-flex justify-content-between align-items-end">
+                <div>
+                    <h1><img src="/images/archive_logo.png" alt="뉴스레터 구독하기"  class="img-fluid"></h1>
+                    <p>
+                        스타트업과 미디어 맛정보를<br>
+                        생생하게 배달하는,<br>
+                        <span>서울미디어(Startup Media Live) 뉴스레터</span>
+                    </p>
+                </div>
+                <img src="/images/content_bg.png" alt="뉴스레터 구독하기" class="img-fluid">
+            </div>
+            <div class="content-middle">
+                <p>
+                    * 서울미디어랩 뉴스레터는 격월로 발송됩니다.
+                </p>
+                <ul class="d-flex justify-content-start flex-wrap gall">
+                    <% for(let i = 0; i < rst.length; i++){
+                    %>
+                        <li>
+                            <a href="https://test.narangdesign.com/mail/seoulmedialab<%= rst[i].tm_link.split(".")[1] %>" target="_blank">
+                                <h5>
+                                    <% if(i == 0){
+                                    %>
+                                        창간호
+                                    <%
+                                    }else{
+                                    %>
+                                        <%= i + 1 %>호
+                                    <%
+                                    } %>
+                                </h5>
+                                <p>
+                                    <%= rst[i].tm_date %>
+                                </p>
+                            </a>
+                        </li>
+                    <%
+                    } %>
+                
+                </ul>
+                <div class="page-wrap d-flex justify-content-center align-items-center">
+                    <% if(prev == true){
+                    %>
+                        <a href = "/archive?page=<%= Number(start) - 10 %>" style="cursor: pointer">&lt;</a>
+                    <%
+                    } %>
+                    <ul class="d-flex justify-content-center align-items-center" id="list">
+                        <% for(let i = start; i <= end; i++) {
+                        %>
+                            <li>
+                                <a href="/archive?page=<%= i %>">
+                                    &nbsp;<%= i %>&nbsp;
+                                </a>
+                            </li>
+                        <%
+                        } %>
+                    </ul>
+                    <% if(next == true){
+                    %>
+                        <a href = "/archive?page=<%= Number(end) + 1 %>" style="cursor: pointer">&gt;</a>
+                    <%
+                    } %>
+
+                </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center logo-wrap">
+                <div><img src="/images/1.png" alt="서울미디어랩" class="img-fluid"></div>
+                <div><img src="/images/2.png" alt="서울특별시" class="img-fluid"></div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script src="/js/jquery-1.12.4.min.js?ver=1"></script>
+<script src="/js/popper.min.js?ver=1"></script>
+<script src="/js/bootstrap.min.js?ver=1"></script>
+<script src="/js/index.js"></script>
+<script>
+    $(document).ready(function () {
+
+    })
+</script>
+</body>
+
+</html>

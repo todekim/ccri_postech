@@ -1,0 +1,341 @@
+@charset "utf-8";
+
+/* 초기 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'NanumBarunGothic', sans-serif;
+    color: #202634;
+}
+
+img {
+    vertical-align: top;
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+.hide-768{
+    display: block !important;
+}
+.view-768{
+    display: none  !important;
+}
+/* 초기 설정 */
+
+/* 전체 박스 및 section별 공통 설정 */
+.wrap {
+    width: 100%;
+    max-width: 900px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+section {
+    background: url(/images/bg.gif);
+}
+
+/* 전체 박스 및 section별 공통 설정 */
+
+
+.top img {
+    display:block
+}
+
+
+
+.contents .content-bottom h1{
+    text-align: center;
+    margin: 50px 0 20px 0;
+}
+
+.contents .content-bottom {
+    border-bottom: none;
+}
+
+.contents .content-bottom form {
+    display: block;
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+  
+
+}
+.table__box{
+    background-color: #fff;
+    border: 3px solid #2b2b2b;
+    box-sizing: border-box;
+    padding: 17px;
+}
+.contents .content-bottom form table {
+    width: 100%;
+    border: 3px solid #2b2b2b;
+}
+
+.contents .content-bottom form table label {
+    margin-bottom: 0;
+    color: #454545;
+}
+
+.contents .content-bottom form table th {
+    background-color: #edf4f7;
+    font-weight: 600;
+    font-size: 21px;
+    color: #202634;
+    text-align: center;
+    border-right: 3px solid #2b2b2b;
+    border-bottom: 3px solid #2b2b2b;
+}
+
+.contents .content-bottom form table tr:first-child th {
+    border-top: 1px solid #e1e1e1;
+}
+
+.contents .content-bottom form table td {
+    border-bottom: 3px solid #2b2b2b;
+    padding: 20px 0 20px 20px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #454545;
+}
+
+.contents .content-bottom form table td label {
+    margin-right: 8px;
+}
+
+.contents .content-bottom form table td input,.contents .content-bottom form table td textarea {
+    border: 1px solid #999999;
+    color: #999999;
+    text-indent: 10px;
+}
+.contents .content-bottom form table td input{
+    height: 33px;
+    width: 100%;
+    /* max-width: 300px; */
+    max-width: 325px;
+   
+}
+.contents .content-bottom form table td textarea{
+    resize: none;
+    text-indent: 0;
+    padding: 5px;
+    display:block
+}
+.contents .content-bottom form ul.phone li{
+    position: relative;
+    padding-right: 13px;
+}
+.contents .content-bottom form ul.phone li::after {
+    content: "-";
+    width: 10px;
+    height: 1px;
+    position: absolute;
+    right:0;
+    top: 25%;
+    transform: translateY(-50%);
+}
+.contents .content-bottom form ul.phone li input{ 
+    max-width: 100px;
+}
+.contents .content-bottom form ul.phone li:last-child::after{
+   display: none;
+}
+.contents .content-bottom form input[type="button"] {
+    display: block;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    background: url(/images/202301/btn.png) no-repeat;
+    width: 240px;
+    height: 70px;
+    margin: 30px auto;
+    margin-bottom: 60px;
+    border: none;
+}
+.agree{
+    border: 3px solid #2b2b2b;
+    margin-top: 20px;
+
+}
+.agree h1{
+    font-size: 21px;
+    color: #1a5cd4;
+    margin: 30px 0 !important;
+    font-weight: 600;
+}
+.agree_text{
+    overflow-y: auto;
+    height: 290px;
+    padding:0 50px;
+    word-break: keep-all;
+    letter-spacing: -0.1px;
+    font-size: 15px;
+}
+
+.agree_text u{
+    display: block;
+    font-weight: 600;
+}
+.agree_text ul li{
+    padding-left: 17px;
+    text-indent: -17px;
+}
+.check_box{
+    margin-top: 30px;
+}
+.check{
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    margin-bottom: 13px;
+    font-size: 19px;
+}
+/*
+#success .modal-content{
+    border: 20px solid #009d5a;
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto;
+    border-radius: 0;
+}
+#success .modal-body{
+    overflow-y: auto;
+    height: auto;
+    margin:30px auto ;
+    padding: 0;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #000;
+    line-height: 1.8;
+}
+#success .modal-body span{
+    background-color:#009d5a ;
+    color: #fff;
+}
+#success .modal-footer{
+    border-top: none;
+    background-color: #fff;
+    margin: 30px 0;
+}
+#success .close{
+    display: block;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    max-width: 160px;
+    margin: 0 auto;
+    padding: 15px 0;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+}
+
+.close:focus,
+.close:hover {
+    color: #fff;
+    text-decoration: none;
+    opacity: 1;
+}*/
+footer{
+    background-color: #111;
+    padding: 30px 0;
+}
+footer p{
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+}
+footer p span{
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    font-weight:300;
+}
+@media (max-width:768px){
+    .hide-768{
+        display: none !important;
+    }
+    .view-768{
+        display: block !important;
+    }
+    .table__box table,.table__box table tr,.table__box table td,.table__box table th,.table__box table,.table__box table tbody{
+        display: block;
+        width: 100%;
+    }
+    .contents .content-bottom form table th{
+        border-right: none;
+    }
+    .contents .content-bottom form table tr:last-of-type td{
+        border-bottom: none;
+    }
+    .agree_text{
+        padding: 0 25px;
+    }
+    .contents .content-bottom form table td textarea,.contents .content-bottom form ul.phone{
+        width: 100%;
+    }
+    .contents .content-bottom form ul.phone li{
+        width:100%
+    }
+    .contents .content-bottom form ul.phone li:last-child{
+        padding-right: 0;
+    }
+    .contents .content-bottom form table td {
+        padding:20px;
+    }
+    .contents .content-bottom form table td input,.contents .content-bottom form ul.phone li input{
+        max-width: none;
+
+    }
+}
+@media(max-width:530px) {
+
+
+    .contents .content-bottom,
+    .contents .content-middle,
+    .contents .content-top {
+        margin: 38px 10px 0;
+    }
+
+    .content-top.d-flex {
+        display: block !important;
+    }
+
+    .content-top img {
+        display: block;
+        margin-left: auto;
+    }
+
+    .contents .content-bottom form table td {
+        padding:10px;
+    }
+
+}
