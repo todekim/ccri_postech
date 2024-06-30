@@ -1,8 +1,6 @@
 # Project exclude paths
 /node_modules/
-
-#dbconfig
-/config/dbConfig.js
-
-#sql or sql backup file
+package-lock.json
 *.sql
+nohup.out
+/config/db*
