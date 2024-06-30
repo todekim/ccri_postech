@@ -16,12 +16,15 @@
 <body>
     <div class="wrap">
         <section>
-            <div class="top">
-              <img src="https://narangdesign.com/mail/postech/event/current/1.jpg" alt="기업시민연구소" class="img-fluid">
-            </div>
-            <div class="top">
-              <img src="https://narangdesign.com/mail/postech/event/current/2.jpg" alt="기업시민연구소" class="img-fluid">
-            </div>
+            <iframe src="https://narangdesign.com/mail/postech/req/event.php" id="myiframe"  width='100'  frameborder='0' scrolling="no" style="max-width:930px;width:100%;overflow-y:hidden"></iframe>
+            <script type="text/javascript">
+              let iframe = document.getElementById('myiframe');
+              
+              window.addEventListener('message', function(e) {
+                let message = e.data;
+                iframe.style.height = message.height + "px";
+              } , false);              
+            </script>
             <div class="contents">
                 <div class="content-bottom">
                   <h1>
