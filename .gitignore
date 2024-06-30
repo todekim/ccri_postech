@@ -1,5 +1,5 @@
 # Project exclude paths
 /node_modules/
-config/passport/localStrategy.js
+/config/
 package-lock.json
 *.sql
